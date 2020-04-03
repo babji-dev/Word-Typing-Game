@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Master</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div class="heading">
+            <h4>Welcome To TypeMaster</h4>
+        </div>
+        <div>
+            <h1 id="curwordarea">Hello</h1>
+        </div>
+        <div class="inputarea">
+            <input type="text" id="inputtext" placeholder="Start Typing ....." autofocus>
+        </div>
+        
+        <div class="scoreandtimer"> 
+            <h4 id="msgsection"></h4>
+            <p>Time Remaining: 
+                <span id="time"></span>
+            </p>
+            <p>Score:
+                <span id="score">0</span>
+            </p>
+            <div class="highscore">
+                <p>Your High Score is :
+                    <span id="highscore"></span>
+                </p>
+            </div>
+        </div>
+
+        
+
+        <div>
+            <button class="button" id="Easy"><span>Easy</span></button>
+            <button class="button" id="Medium"><span>Medium</span></button>
+            <button class="button" id="Hard"><span >Hard</span></button>
+        </div>
+        <button class="button" id="reset"><span>Reset</span></button>
+        
+    </div>
+
+
+    <script src="main.js"></script>
+
+</body>
+</html>

@@ -168,4 +168,7 @@ function checkstatus(){
 }
 highscore.innerHTML = localStorage.getItem('score');
 
+if(msgsection.innerHTML==='GameOver !!!'){
+    location.reload();
+}
 

@@ -1,15 +1,13 @@
 window.addEventListener('load',loaded)
 
-
 //Global variables
 var score = 0;
 var isplaying;
 var recentScore;
 var time;
 var samp;
-var e1;
-var h1;
-var m1;
+var run;
+
 
 
 
@@ -23,11 +21,20 @@ var highscore = document.querySelector('#highscore');
 
 const words = ['new','JavaScript','Python','Java','Ruby','Kotlin','Pokemon','Avengers','Thor','Dr.Strange','IronMan','AntMan','Hulk Avenger']
 
-function loaded() {
-    setwords(words);
 
+var easy1 = document.querySelector('#Easy');
+var medium1 = document.querySelector('#Medium');
+var hard1 = document.querySelector('#Hard');
+var reset1 = document.querySelector('#reset');
+
+function loaded() {
+    
+    setwords(words);
+    timedisplay.innerHTML = localStorage.getItem('runtim');
+    time = localStorage.getItem('runtim');
     inputtext.addEventListener('input',startmatch);
-    //  inputtext.addEventListener('input',startmatch);
+
+
     inputtext.addEventListener('click',setter);
     function setter(){
     setInterval(countdown,1000);
@@ -36,73 +43,47 @@ function loaded() {
     
 }
 
-var easy1 = document.querySelector('#Easy');
-var medium1 = document.querySelector('#Medium');
-var hard1 = document.querySelector('#Hard');
-var reset1 = document.querySelector('#reset');
-
 easy1.addEventListener('click',easy)
 medium1.addEventListener('click',medium)
 hard1.addEventListener('click',hard)
 reset1.addEventListener('click',reset)
 
-if((m1!=1) && (h1!=1) && (e1!=1)){
-    msgsection.innerHTML=''
-    // var inputtext2 = document.getElementById('inputtext');
-    time = localStorage.getItem('tempo');
-    timedisplay.innerHTML= time;
-    samp = time;
-}
+
+
+
 
 function easy(){
-    if((m1==1)||(h1==1) || (e1==1)){
-        localStorage.setItem('tempo',7);
-        window.location.reload(true);
-    }
-    else{
     msgsection.innerHTML=''
     localStorage.setItem('timer',7);
     time = localStorage.getItem('timer');
     timedisplay.innerHTML= time;
     samp = time;
-    e1=1;
-    }
+    localStorage.setItem('runtim',7);
+    window.location.reload(true);
 }
 function medium(){
-    if((m1==1)||(h1==1) || (e1==1)){
-        localStorage.setItem('tempo',5);
-        window.location.reload(true);
-    }
-    else{
     msgsection.innerHTML=''
     localStorage.setItem('timer',5);
     time = localStorage.getItem('timer');
     timedisplay.innerHTML= time;
     samp = time;
-    m1=1;
-    }
+    localStorage.setItem('runtim',5);
+    window.location.reload(true);
 }
 function hard(){
-    if((m1==1)||(h1==1) || (e1==1)){
-        localStorage.setItem('tempo',3);
-        window.location.reload(true);
-    }
-    else{
     msgsection.innerHTML=''
     localStorage.setItem('timer',3);
     time = localStorage.getItem('timer');
     timedisplay.innerHTML= time;
     samp = time;
-    h1=1;
-    
-    }
-}
-time = localStorage.getItem('timer');
-function reset(){
-    localStorage.setItem('score','');
-    location.reload();
+    localStorage.setItem('runtim',3);
+    window.location.reload(true);
 }
 
+function reset(){
+    localStorage.setItem('score','');
+    window.location.reload(true);
+}
 
 
 function setwords(words){
@@ -111,9 +92,10 @@ function setwords(words){
 }
 
 function startmatch(){
+   
     if(matchwords()){
         isplaying= true;
-        time = samp;
+        time = localStorage.getItem('runtim');
         setwords(words);
         inputtext.value='';
         score++;
@@ -152,7 +134,6 @@ function countdown(){
         }
         score=-1;
         inputtext.value = ''; 
-        
     }
     timedisplay.innerHTML= time;
 }

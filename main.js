@@ -57,7 +57,7 @@ if((m1!=1) && (h1!=1) && (e1!=1)){
 function easy(){
     if((m1==1)||(h1==1) || (e1==1)){
         localStorage.setItem('tempo',7);
-        location.reload()
+        window.location.reload(true);
     }
     else{
     msgsection.innerHTML=''
@@ -71,7 +71,7 @@ function easy(){
 function medium(){
     if((m1==1)||(h1==1) || (e1==1)){
         localStorage.setItem('tempo',5);
-        location.reload();
+        window.location.reload(true);
     }
     else{
     msgsection.innerHTML=''
@@ -85,7 +85,7 @@ function medium(){
 function hard(){
     if((m1==1)||(h1==1) || (e1==1)){
         localStorage.setItem('tempo',3);
-        location.reload()
+        window.location.reload(true);
     }
     else{
     msgsection.innerHTML=''
@@ -164,9 +164,7 @@ function checkstatus(){
             localStorage.setItem('score',score);
         }
         score=-1;
+        window.location.reload(true);
     }
 }
 highscore.innerHTML = localStorage.getItem('score');
-
-
-

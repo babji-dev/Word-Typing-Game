@@ -164,11 +164,12 @@ function checkstatus(){
             localStorage.setItem('score',score);
         }
         score=-1;
+        if(msgsection.innerHTML==='GameOver !!!'){
+    location.reload();
+}
     }
 }
 highscore.innerHTML = localStorage.getItem('score');
 
-if(msgsection.innerHTML==='GameOver !!!'){
-    location.reload();
-}
+
 

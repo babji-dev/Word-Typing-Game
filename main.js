@@ -152,6 +152,7 @@ function countdown(){
         }
         score=-1;
         inputtext.value = ''; 
+        window.location.reload(true);
     }
     timedisplay.innerHTML= time;
 }

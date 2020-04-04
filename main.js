@@ -152,7 +152,7 @@ function countdown(){
         }
         score=-1;
         inputtext.value = ''; 
-        window.location.reload(true);
+        
     }
     timedisplay.innerHTML= time;
 }
@@ -165,7 +165,6 @@ function checkstatus(){
             localStorage.setItem('score',score);
         }
         score=-1;
-        window.location.reload(true);
     }
 }
 highscore.innerHTML = localStorage.getItem('score');

@@ -159,14 +159,15 @@ function countdown(){
 function checkstatus(){
     if( !isplaying && time===0){
         msgsection.innerHTML='GameOver !!!';
+        setInterval(delay,500);
+        function delay(){
+            location.reload();
+        }
         if(score>localStorage.getItem('score'))
         {
             localStorage.setItem('score',score);
         }
         score=-1;
-        if(msgsection.innerHTML==='GameOver !!!'){
-    location.reload();
-}
     }
 }
 highscore.innerHTML = localStorage.getItem('score');
